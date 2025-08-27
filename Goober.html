@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GOOBER</title>
+  <style>
+    :root { --bg:#0f1221; --ink:#f5f7ff; --accent:#80ffcc; }
+    html,body{margin:0}
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 70% -10%, #1b2040 0%, var(--bg) 60%);
+      color: var(--ink);
+      display: grid;
+      min-height: 100svh;
+      place-items: center;
+      padding: 32px;
+    }
+    .card {
+      width: min(720px, 92vw);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 28px 28px 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+    h1 { font-size: clamp(32px, 6vw, 56px); margin: 0 0 6px; letter-spacing: 1px; }
+    .tag { color: var(--accent); font-weight: 700; letter-spacing: .18em; text-transform: uppercase; font-size: 12px; }
+    p { font-size: clamp(16px, 2.8vw, 18px); line-height: 1.55; margin: 14px 0; }
+    .qr {
+      margin: 18px auto 8px;
+      width: 160px; height: 160px;
+      display: grid; place-items: center;
+      border-radius: 12px;
+      background:
+        conic-gradient(from 45deg, #0000 0 25%, rgba(255,255,255,.12) 0 50%, #0000 0 75%, rgba(255,255,255,.12) 0) 0 0/20px 20px,
+        rgba(255,255,255,.06);
+      border: 1px dashed rgba(255,255,255,.2);
+      user-select: none;
+    }
+    .small { opacity: .75; font-size: 14px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 16px; opacity: .7; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <div class="tag">Official Page</div>
+    <h1 id="title">GOOBER</h1>
+    <p>
+      Welcome to the <strong>Goober Clan</strong>.
+      If you’ve got a business card with a QR code that points to this website,
+      congratulations — <em>you’re in</em>. That card is your badge.
+    </p>
+
+    <!-- Replace this box with your real QR image -->
+    <div class="qr" aria-label="QR code placeholder">
+      <span class="small">QR goes here</span>
+    </div>
+
+    <p class="small">
+      do not share this link or QR code with anyone else.
+    </p>
+
+    <p>
+      Want to make your own card? well you cant. only a select few are given the privilige of the card.
+    </p>
+
+    <div class="footer">
+      © <span id="year"></span> Goober Clan, Be Goober.
+    </div>
+  </main>
+
+  <script>
+    // Set current year and optionally swap in a QR image if you add one later.
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Example: document.querySelector('.qr').innerHTML = '<img src="qr.png" alt="Goober QR" width="160" height="160" style="border-radius:12px" />';
+  </script>
+</body>
+</html>
